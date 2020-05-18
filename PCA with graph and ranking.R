@@ -2,10 +2,10 @@
 library(ggplot2)
 
 # Definition of working directory
-setwd("C:/Users/b.segard/Desktop/PCA/VNCF vs VCF - upregaluted")
+setwd(".")
 
 # Defintion of data file
-data.matrix <- read.table("Group_FVNCF-VS-FVCF_DE_significant_anno - upregulated.txt",
+data.matrix <- read.table("Group_FVNCF-VS-FVCF_DE_significant_anno - up and down.txt",
                           header = TRUE)
 
 # PCA on input data
@@ -49,7 +49,7 @@ ggplot(data = pca.data, aes(x = X, y = Y, fill = CellType)) +
 loading_scores <- pca$rotation[,1] # rotation is an output of prcomp()
 gene_scores <- abs(loading_scores) # see: magnitudes
 gene_score_ranked <- sort(gene_scores, decreasing=TRUE)
-genes_ranking <- names(gene_score_ranked[1:736])
+genes_ranking <- names(gene_score_ranked[1:2286])
 
 # Print genes and scores
 pca$rotation[genes_ranking, 1]
