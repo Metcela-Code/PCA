@@ -4,7 +4,7 @@ library(ggplot2)
 # Definition of working directory
 setwd(".")
 
-# Defintion of data file
+# Definition of data file
 data.matrix <- read.table("Group_FVNCF-VS-FVCF_DE_significant_anno - up and down.txt",
                           header = TRUE)
 
